@@ -12,8 +12,13 @@
 		</style>
 	</head>
 	<body>
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/three.js/r57/three.min.js"></script>
+		<button onclick="s();">click me</button>
+		<!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/three.js/r57/three.min.js"></script> -->
+		<script src="./vividcube.js"></script>
 		<script>
+		var s = function(){
+			console.log("hello world");
+		}
 
 			var camera, scene, renderer;
 			var geometry, material, mesh;
