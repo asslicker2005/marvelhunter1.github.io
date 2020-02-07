@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<!--
+If you find the appearance of this page somewhat familiar, it is not a coincidence!
+This is adapted from https://vuejs.org/v2/guide/ , with most of its layout directly copied plus minor editing.
+I was just looking for a nice design and was too lazy to search for free templates or create one from scratch.
+Since this page is used for informative purposes, I do not expect to cause any discomfort for any party.
+Hope you find these resources useful :-)
+-->
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="generator" content="Hexo 3.8.0">
+		<title>
+			Welcome!
+		</title>
+		<meta name="msapplication-TileImage" content="/images/icons/ms-icon-144x144.png">
+		<link rel="icon" href="rsc/logo.png" type="image/png">
+		<meta name="msapplication-TileColor" content="#4fc08d">
+		<meta name="theme-color" content="#4fc08d">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- main page styles -->
+		<link rel="stylesheet" href="rsc/page.css">
+		<!-- this needs to be loaded before guide's inline scripts -->
+		<script src="rsc/vue.js"></script>
+		<!-- this is a online library for the vividcube -->
+		<!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/three.js/r57/three.min.js"></script> -->
+		<script src="rsc/vividcube.js"></script>
+	</head>
+	<body class="docs">
+		<div id="mobile-bar">
+			<a class="menu-button">
+			</a>
+			<a class="logo" id="logo_mobile" href="">
+			</a>
+		</div>
+		<div id="header">
+			<a id="logo" href="">
+				<span id='Title'></span>
+			</a>
+      <ul id="nav">
+				<li class="nav-dropdown-container rsc">
+					<a class="nav-link">
+						Resources
+					</a>
+					<span class="arrow">
+					</span>
+					<ul class="nav-dropdown">
+						<li>
+							<h4>
+								Resource
+							</h4>
+						</li>
+						<li>
+							<ul>
+								<li>
+									<a href="./index.html" class="nav-link">
+										List
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						<li>
+							<ul>
+								<li>
+									<a class="nav-link invalid" rel="sponsored noopener">
+										Other Stuff
+									</a>
+								</li>
+								<li>
+									<a class="nav-link invalid" rel="sponsored noopener">
+										Reference
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					<a href="./about.html" class="nav-link current">
+						About
+					</a>
+				</li>
+
+				<li class="nav-dropdown-container language">
+					<a class="nav-link">
+						Translations
+					</a>
+					<span class="arrow">
+					</span>
+					<ul class="nav-dropdown">
+						<li>
+							<a class="nav-link invalid">
+								Working on it!
+							</a>
+						</li>
+					</ul>
+					<!-- <ul class="nav-dropdown">
+						<li>
+							<a href="" class="nav-link current" target="_blank"
+							rel="noopener">
+								中文
+							</a>
+						</li>
+						<li>
+							<a href="" class="nav-link" target="_blank"
+							rel="noopener">
+								日本語
+							</a>
+						</li>
+						<li>
+							<a href="" class="nav-link" target="_blank"
+							rel="noopener">
+								Русский
+							</a>
+						</li>
+						<li>
+							<a href="" class="nav-link" target="_blank"
+							rel="noopener">
+								한국어
+							</a>
+						</li>
+						<li>
+							<a href="" class="nav-link" target="_blank"
+							rel="noopener">
+								Português
+							</a>
+						</li>
+						<li>
+							<a href="" class="nav-link" target="_blank"
+							rel="noopener">
+								Français
+							</a>
+						</li>
+						<li>
+							<a href="" class="nav-link" target="_blank"
+							rel="noopener">
+								Tiếng Việt
+							</a>
+						</li>
+						<li>
+							<a href="" class="nav-link" target="_blank"
+							rel="noopener">
+								Español
+							</a>
+						</li>
+						<li>
+							<a href="" class="nav-link" target="_blank"
+							rel="noopener">
+								Bahasa Indonesia
+							</a>
+						</li>
+					</ul> -->
+				</li>
+			</ul>
+		</div>
+
+		<div id="main" class="fix-sidebar">
+			<div class="sidebar">
+				<div class="sidebar-inner">
+					<div class="list">
+						<h2>
+							Contents
+							<!-- <select class="version-select">
+								<option value="SELF" selected="">
+									2.0
+								</option>
+								<option value="v1">
+									1.0
+								</option>
+								<option value="012">
+									0.2
+								</option>
+								<option value="011">
+									0.1
+								</option>
+							</select> -->
+						</h2>
+						<ul class="menu-root">
+							<li>
+								<h3>
+									About Me
+								</h3>
+							</li>
+							<li>
+								<a href="#-about-me-" class="sidebar-link">
+									Contact
+								</a>
+							</li>
+							<li>
+								<h3>
+									About This Page
+								</h3>
+							</li>
+							<li>
+								<a href="#-about-this-page-" class="sidebar-link">
+									GitHub Pages
+								</a>
+							</li>
+							<li>
+								<a href="#-about-this-page-" class="sidebar-link">
+									Notice
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="content guide with-sidebar index-guide">
+				<h2 id="-about-me-">
+					About Me
+				</h2>
+				<p>
+					Email: infinitytime@icloud.com
+				</p>
+				<p>
+					GitHub: github.com/marvelhunter1
+				</p>
+				<p class="tip">
+					If you have any idea on how to imporve this page, please do not hesitate to contact me! You can find all documents in my GitHub repository.
+					You are also welcomed to report any mistakes you find in here, but I would particularly like it if you have any idea on possible extention
+					methods I could add to this page so that people can talk, report bugs, and share their resources more easily.
+				</p>
+				<p class="tip">
+					如果你看完之后有什么想法，请与我联系。你可以在GitHub上找到这个网页的repository。如果发现了网页上的错误，或者你有一些改进的方案，也请不吝赐教。
+				</p>
+
+				<h2 id="-about-this-page-">
+					About This Page
+				</h2>
+				<!-- <div class="vue-mastery">
+					<a href="" title="">
+						Watch a video
+					</a>
+				</div> -->
+				<p>
+					This website is hosted by GitHub Pages, a free service for anyone who has a GitHub account.
+					If you do not have an account yet, sign-up is also free! Click
+					<a href="https://pages.github.com/">here</a>
+					to view the official guide on what to do and you can set up your own website in minutes!
+
+					Before you considering setting up you website, I recommand you take a look at this
+					<a href="http://www.motherfuckingwebsite.com">interesting website</a>.
+					It is titled as "moth**fu**ing website".
+					Please pay extra attention as the word usage on it can be misleading.
+				<p>
+				</p>
+
+				<p class="tip">
+					Find the appearance of this page somewhat familiar? Not a coincidence!
+					This is adapted from
+					<a href="https://vuejs.org/v2/guide/" rel="noopener" target="_blank">
+						Vue Documentation Page
+					</a>
+					(https://vuejs.org/v2/guide/),
+					with most of its layout directly copied plus minor editing to remove related content, title and logo.
+					I was just looking for a nice design and was too lazy to create one from scratch.
+					Nor did I find any free templates online that could be as aesthetically appealing as Vue.
+					Since this page is used only for informational purposes, I hope no one get hurt.
+					Anyways, if there is a problem you can find my contact info at the top of this page.
+					otherwise I hope you find something useful in here :-)
+				</p>
+
+				<div class="footer">
+					<strong>
+						GitHub |
+						<a>
+							Sharing is Growing
+						</a>
+					</strong>
+				</div>
+			</div>
+		</div>
+
+		<script src="rsc/smooth-scroll.min.js"></script>
+
+		<!-- main custom script for sidebars, version selects etc. -->
+		<script src="rsc/css.escape.js"></script>
+		<script src="rsc/common.js"></script>
+
+		<!-- search -->
+		<!-- <link href="./index_files/docsearch.min.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="./index_files/search.css">
+		<script src="./index_files/docsearch.min.js">
+		</script>
+		<span class="algolia-autocomplete" style="position: absolute; z-index: 100; display: none; direction: ltr;">
+			<span class="aa-dropdown-menu" role="listbox" id="algolia-autocomplete-listbox-0"
+			style="display: block; left: 0px; right: auto;">
+				<div class="aa-dataset-1">
+				</div>
+			</span>
+		</span> -->
+	</body>
+
+  <script type="text/javascript">
+  function init(cube,container) {
+
+    cube.renderer.setSize(cube.canvas_width, cube.canvas_width);
+    container.appendChild(cube.renderer.domElement);
+
+    cube.camera = new THREE.PerspectiveCamera(50, cube.canvas_width / cube.canvas_height, 1, 1000);
+    cube.camera.position.z = 500;
+
+    cube.scene = new THREE.Scene();
+
+    cube.geometry = new THREE.CubeGeometry(200, 200, 200);
+    cube.material = new THREE.MeshBasicMaterial({
+      color: 0x000000,
+      wireframe: true,
+      wireframeLinewidth: 2
+    });
+
+    cube.mesh = new THREE.Mesh(cube.geometry, cube.material);
+    cube.scene.add(cube.mesh);
+
+  }
+
+  function animate(cubes) {
+    for (var i=0; i < cubes.length; i++){
+
+
+      cubes[i].mesh.rotation.x = Date.now() * 0.0005;
+      cubes[i].mesh.rotation.y = Date.now() * 0.001;
+
+      cubes[i].renderer.render(cubes[i].scene, cubes[i].camera);
+    }
+  }
+
+    var vividcube = {
+      renderer: new THREE.CanvasRenderer(),
+      canvas_width:40,
+      canvas_height:40,
+      camera:0,
+      scene:0,
+      geometry:0,
+      material:0,
+      mesh:null
+    };
+
+    var vividcube_size2 = {
+      renderer: new THREE.CanvasRenderer(),
+      canvas_width:30,
+      canvas_height:30,
+      camera:0,
+      scene:0,
+      geometry:0,
+      material:0,
+      mesh:null
+    };
+
+    var logo = document.getElementById("logo");
+    var logo_mobile = document.getElementById("logo_mobile");
+
+    var cubes=[vividcube,vividcube_size2];
+
+    init(vividcube,logo);
+    init(vividcube_size2,logo_mobile);
+    animate(cubes);
+    setInterval(function(){animate(cubes)},10)
+
+  </script>
+</html>
