@@ -11,7 +11,7 @@ Hope you find these resources useful :-)
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="generator" content="Hexo 3.8.0">
 		<title>
-			Welcome!
+			Tool Box
 		</title>
 		<link rel="icon" href="rsc/logo.png" type="image/png">
 		<meta name="msapplication-TileColor" content="#4fc08d">
@@ -24,6 +24,14 @@ Hope you find these resources useful :-)
 		<!-- this is a online library for the vividcube -->
 		<!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/three.js/r57/three.min.js"></script> -->
 		<script src="rsc/vividcube.js"></script>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-161830285-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		  gtag('config', 'UA-161830285-1');
+		</script>
 	</head>
 	<body class="docs">
 		<div id="mobile-bar">
@@ -446,7 +454,7 @@ Hope you find these resources useful :-)
 					<a href="http://mingw.org/">
 						GCC Tool for Windows
 					</a>
-					| 这年头一般都用集成IDE了，不过没有IDE的时候安装了这个也能写码。居安思危，熟悉command line和notepad，关键时刻永远处变不惊。
+					| 这年头一般要用集成IDE了，不过没有IDE的时候安装了这个也能写码。居安思危，熟悉command line和notepad，关键时刻永远处变不惊。
 				</p>
 
 				<h3 id="-python-">
@@ -515,6 +523,7 @@ Hope you find these resources useful :-)
 					Python的一个图像处理工具，用openCV也行，我一般一块儿用。
 				</p>
 
+
 				<h3 id="-hjc-">
 					HTML/Javascript/CSS
 				</h3>
@@ -523,6 +532,7 @@ Hope you find these resources useful :-)
 						TemperMonkey
 					</a>
 					可以让浏览器打开网页时注入自定义js代码，有社区支持，但也要防范一些用户发布的恶意脚本。搭配adblock，可以个（破）性（解）化（掉）99%的网站。
+					虽然python有强大的selenium和pySpider，但是除非你制作和维护大型爬虫程序的频率很高，否则使用浏览器自带的开发者工具搭配js屏蔽/注入就足够方便了。
 				</p>
 				<p>
 					<a href="https://electronjs.org/">
@@ -581,7 +591,7 @@ Hope you find these resources useful :-)
 					<a href="https://code.visualstudio.com/docs/remote/remote-overview">
 						VS Code Remote Development
 					</a>
-					VS Code 多年前用过，因功力不够，没鼓捣明白，沦为陌路。但是这个Remote Extension Package让我拾起了重修旧好的勇气。
+					强大的远程开发工具。VS Code 多年前用过，因功力不够，没鼓捣明白，沦为陌路。但是这个Remote Extension Package让我拾起了重修旧好的勇气。
 				</p>
 
 				<h2>
@@ -726,7 +736,7 @@ Hope you find these resources useful :-)
 					<a href="https://www.rtl-sdr.com/">
 						RTL-SDR
 					</a>
-					这是个有故事的电视棒，官网上有详细说明。接收范围24~1700MHz，绕过Tuner可以采样到500KHz。
+					这是个有故事的电视棒，官网上有详细说明。接收范围24~1700MHz，绕过Tuner可以接受到低至500KHz的频段。
 				</p>
 				<p>
 					<a href="http://gnuradio.microembedded.com/usrp">
@@ -755,8 +765,7 @@ Hope you find these resources useful :-)
 					<a href="https://baike.baidu.com/item/%E8%87%AA%E5%8A%A8%E4%BD%8D%E7%BD%AE%E5%9B%9E%E6%8A%A5%E7%B3%BB%E7%BB%9F/22755851?fromtitle=APRS&fromid=5893812#5">
 						APRS-IS
 					</a>
-					（APRS互联网服务）应运而生。
-					在以下这些服务器平台上可查看周围网络节点。
+					（APRS互联网服务）应运而生。在以下这些服务器平台上可查看周围网络节点。
 					<ul>
 						<li>
 							aprs.fi平台： https://aprs.fi/
@@ -817,7 +826,7 @@ Hope you find these resources useful :-)
 					<a href="https://pandownload.com/index.html">
 						PanDownload
 					</a>
-					百度盘下载器。注：由于百度网盘升级，超过50M文件地址获取不到，只能中低速下载，市面上似乎还没有什么好的解决办法。
+					百度盘下载器。注：由于百度网盘升级，超过30M文件地址获取不到，只能登陆后下载，如果你有网盘账号的话应该不是问题。
 				</p>
 				<p>
 					<a href="https://www.xunlei.com/">
@@ -830,10 +839,11 @@ Hope you find these resources useful :-)
 						Motrix
 					</a>
 					干净灵巧的下载器，支持BT，种子，磁链，直链。不过效果似乎不及迅雷。
+					作为开源的工程，自然有被限制的弱点，道高一尺魔高一丈，自己的路自己走。
 				</p>
 				<p>
 					<a href="https://github.com/ytdl-org/youtube-dl">
-						Youtube
+						Youtube下载器
 					</a>
 					不多说，谨言慎行。
 				</p>
@@ -886,7 +896,7 @@ Hope you find these resources useful :-)
 					<a href="https://www.bitvise.com/">
 						Bitvise
 					</a>
-					那时候win10还没有ssh，用putty好不容易才连上VPS。后来听说了这个Bitvise还自带图形界面的SFTP
+					SSH客户端。那时候win10还没有ssh，用putty好不容易才连上VPS。后来听说了这个Bitvise还自带图形界面的SFTP
 					（第一次打开它时，笔者正在一脸愁苦的查阅FTP命令，见到它简直激动到不能自已，从此da svidania putty）。
 				</p>
 				<p>
@@ -899,7 +909,7 @@ Hope you find these resources useful :-)
 					<a href="https://docs.microsoft.com/en-us/sysinternals/downloads/psping">
 						PsPing
 					</a>
-					Ping的加强版，一些测试网络的功能。
+					Windows Ping的加强版，一些测试网络的功能。
 				</p>
 				<p>
 					<a href="https://github.com/xiangyuecn/Recorder">
@@ -911,7 +921,8 @@ Hope you find these resources useful :-)
 					<a href="https://www.tampermonkey.net/">
 						TemperMonkey
 					</a>
-					可以让浏览器打开网页时载入自定义js代码，有社区支持，但也要防范一些用户发布的恶意脚本。搭配adblock，可以个（破）性（解）化（掉）99%的网站。
+					可以让浏览器打开网页时注入自定义js代码，有社区支持，但也要防范一些用户发布的恶意脚本。搭配adblock，可以个（破）性（解）化（掉）99%的网站。
+					虽然python有强大的selenium和pySpider，但是除非你制作和维护大型爬虫程序的频率很高，否则使用浏览器自带的开发者工具搭配js屏蔽/注入就足够方便了。
 				</p>
 
 				<h2>
@@ -924,7 +935,7 @@ Hope you find these resources useful :-)
 					<a href="https://www.mijisou.com/">
 						秘迹搜索
 					</a>
-					无cookies，无账号，不跟踪，无污染的搜索引擎。隐私，你值得拥有。
+					无cookies，无账号，无跟踪，无污染的搜索引擎。隐私，你值得拥有。
 				</p>
 				<p>
 					<a href="http://www.sjxt.com/">
@@ -980,7 +991,7 @@ Hope you find these resources useful :-)
 				</p>
 				<p>
 					<a href="http://v.yizhansou.com/mv">
-						一站搜
+						一站搜（已消失）
 					</a>
 					搜索网上各类影视资源，配合解析软件效果最佳
 				</p>
@@ -1012,7 +1023,7 @@ Hope you find these resources useful :-)
 					<a href="http://tool.yovisun.com/scihub/">
 						Sci-Hub
 					</a>
-					收集目录更加庞大的学术论文数据库，宗旨是知识无价。
+					收集目录更加庞大的学术论文数据库，宗旨是知识无界（...to remove all barriers in the way of science）。
 				</p>
 				<p>
 					<a href="https://www.semanticscholar.org/">
@@ -1024,7 +1035,7 @@ Hope you find these resources useful :-)
 					<a href="https://ebooks.adelaide.edu.au/">
 						Adelaide University Archive
 					</a>
-					档案库，可以找到一些过去的书籍，文件。
+					学校档案库，可以找到一些过去的书籍，文件。
 				</p>
 				<p>
 					<a href="https://epubw.com/">
@@ -1145,25 +1156,6 @@ Hope you find these resources useful :-)
 				</div>
 			</div>
 		</div>
-
-		<script src="rsc/smooth-scroll.min.js"></script>
-
-		<!-- main custom script for sidebars, version selects etc. -->
-		<script src="rsc/css.escape.js"></script>
-		<script src="rsc/common.js"></script>
-
-		<!-- search -->
-		<!-- <link href="./index_files/docsearch.min.css" rel="stylesheet" type="text/css">
-		<link rel="stylesheet" href="./index_files/search.css">
-		<script src="./index_files/docsearch.min.js">
-		</script>
-		<span class="algolia-autocomplete" style="position: absolute; z-index: 100; display: none; direction: ltr;">
-			<span class="aa-dropdown-menu" role="listbox" id="algolia-autocomplete-listbox-0"
-			style="display: block; left: 0px; right: auto;">
-				<div class="aa-dataset-1">
-				</div>
-			</span>
-		</span> -->
 	</body>
 
   <script type="text/javascript">
