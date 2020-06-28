@@ -9,7 +9,8 @@
 		$(document).ready(function(){
 			$('#button').on('click', function(){
 				$(this).toggleClass('on');
-				window.parent.postMessage('data','http://localhost:8080/');
+				$(window.parent.h());
+				// window.parent.postMessage('data','http://localhost:8080/');
 			});
 		});
 	</script>
