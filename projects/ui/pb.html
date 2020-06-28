@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>css3黑色UI按钮 - 站长素材</title>
+	<link rel="stylesheet" href="rsc_pb/style2.css">
+	<script type="text/javascript" src="rsc_pb/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#button').on('click', function(){
+				$(this).toggleClass('on');
+				window.parent.postMessage('data','http://localhost:8080/');
+			});
+		});
+	</script>
+</head>
+<body>
+	<section>
+		<!-- Note: the [Power] button uses "" character, unicode 0xf011 -->
+		<a href="#" id="button" class="on"></a>
+		<span></span>
+	</section>
+</body>
+</html>
