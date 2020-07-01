@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+	<title>CSS3 Power Button</title>
+	<link rel="stylesheet" href="style2.css">
+	<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#button').on('click', function(){
+				$(this).toggleClass('on');
+				if (window.self==window.top){
+					var txt='This page is intended for personal use only. It works by being embeded in other website. Please exit and refer to my github page for more information.'
+					// alert(txt);
+			    $("#info").text(txt);        // 追加新元素
+				}
+				else{
+					if($('#button').hasClass('on')){
+						window.parent.postMessage('state=on','*');
+					}
+					else{
+						window.parent.postMessage('state=off','*');
+					}
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<section>
+		<!-- Note: the [Power] button uses "" character, unicode 0xf011 -->
+		<a href="javascript:void(0)" id="button" class=""></a>
+		<span></span>
+	</section>
+	<p id="info" style="color:#fff; text-align:center"></p>
+</body>
+</html>

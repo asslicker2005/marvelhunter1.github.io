@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!--
+If you find the appearance of this page somewhat familiar, it is not a coincidence!
+This is adapted from https://vuejs.org/v2/guide/ , with most of its layout directly copied plus minor editing.
+I was just looking for a nice design and was too lazy to search for free templates or create one from scratch.
+Since this page is used for informative purposes, I do not expect to cause any discomfort for any party.
+Hope you find these resources useful :-)
+-->
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="generator" content="Hexo 3.8.0">
+		<title>
+			UAV
+		</title>
+
+		<!-- page icon -->
+		<link rel="icon" href="rsc/logo.png" type="image/png">
+		<!-- page style -->
+		<link rel="stylesheet" href="/rsc/style.css">
+		<!-- page font -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Source+Sans+Pro:wght@300;400;600&display=swap">
+
+		<script src="/rsc/jquery-1.7.2.min.js"></script>
+		<script src="/rsc/three.min.js"></script>
+		<!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/three.js/r57/three.min.js"></script> -->
+
+		<script src="/rsc/userscript.js"></script>
+		<script type="text/javascript">
+			//load external navigation menu before running initialization
+			//initAll() passed as jquery.load callback
+			$(document).ready(function(){
+				$("#header").load("/rsc/header_zh.html",'',initAll)
+				$(".footer").load("/rsc/footer_zh.html");
+			});
+		</script>
+	</head>
+	<body class="docs">
+		<div id="mobile-bar">
+			<a class="menu-button">
+			</a>
+			<a class="logo" id="logo_mobile" href="./index.html">
+			</a>
+		</div>
+
+		<div id="header">
+		</div>
+
+		<div id="main" class="fix-sidebar">
+			<div class="sidebar">
+				<div class="sidebar-inner">
+					<div class="list">
+						<h2>
+							目录
+						</h2>
+						<ul class="menu-root">
+							<li>
+								<h3>
+									总体设计
+								</h3>
+							</li>
+							<li>
+								<a href="#" class="sidebar-link">
+									内容
+								</a>
+							</li>
+							<li>
+								<h3>
+									拓扑结构
+								</h3>
+							</li>
+							<li>
+								<h3>
+									配件概览
+								</h3>
+							</li>
+							<li>
+								<a href="#" class="sidebar-link">
+									芯片/模块
+								</a>
+							</li>
+							<li>
+								<a href="#" class="sidebar-link">
+									马达
+								</a>
+							</li>
+							<li>
+								<h3>
+									原理图
+								</h3>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="content guide with-sidebar index-guide">
+				<h1>
+					UAV: Preparation
+				</h1>
+				<h2 id="-overall design-">
+					总体设计
+				</h2>
+				<p>
+					 :-)
+				</p>
+				<p>
+					控制系统：采用STM32F103作为总控芯片
+					<br>
+					通信系统：机上数据以I2C，USART，以及GPIO采样方式汇总至总控
+					<br>
+					动力系统：采用BLDC单旋翼+舵机+尾翼电机。总控定时器输出六通道互补PWM驱动H桥。
+					<br>
+					地面监测：使用LoRa芯片通信。
+				</p>
+				<h2 id="-topo-structure-">
+					拓扑结构
+				</h2>
+				<p>
+					 :-)
+				</p>
+
+				<h2 id="-component-list-">
+					配件概览
+				</h2>
+				<p>
+					芯片
+				</p>
+				<ul>
+					<li>
+						总控：STM32F103C8T6
+					</li>
+					<li>
+						GPS：中科微ATGM332-D
+					</li>
+					<li>
+						姿态：MPU6050
+					</li>
+					<li>
+						通信：SX1262
+					</li>
+				</ul>
+				<p>
+					<br>
+					马达：BLDC 12N14P，950kV
+					<br>
+				</p>
+
+				<h2 id="-schematic-diagram-">
+					电路图
+				</h2>
+				<p>
+					 :-)
+				</p>
+
+				<div class="footer"></div>
+			</div>
+		</div>
+
+	</body>
+</html>

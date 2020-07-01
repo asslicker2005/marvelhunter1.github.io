@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!--
+If you find the appearance of this page somewhat familiar, it is not a coincidence!
+This is adapted from https://vuejs.org/v2/guide/ , with most of its layout directly copied plus minor editing.
+I was just looking for a nice design and was too lazy to search for free templates or create one from scratch.
+Since this page is used for informative purposes, I do not expect to cause any discomfort for any party.
+Hope you find these resources useful :-)
+-->
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>
+			IoT用户终端 | DIY
+		</title>
+		<!-- page icon -->
+		<link rel="icon" href="/rsc/logo.png" type="image/png">
+		<!-- page style -->
+		<link rel="stylesheet" href="/rsc/style.css">
+		<!-- page font -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Source+Sans+Pro:wght@300;400;600&display=swap">
+
+		<script src="/rsc/jquery-1.7.2.min.js"></script>
+		<script src="/rsc/three.min.js"></script>
+		<!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/three.js/r57/three.min.js"></script> -->
+
+		<script src="/rsc/userscript.js"></script>
+		<script type="text/javascript">
+			//load external navigation menu before running initialization
+			//initAll() passed as jquery.load callback
+			$(document).ready(function(){
+				$("#header").load("/rsc/header_zh.html",'',initAll);
+				$(".footer").load("/rsc/footer_zh.html");
+			});
+		</script>
+	</head>
+
+	<body class="docs">
+		<div id="mobile-bar">
+			<a class="menu-button">
+			</a>
+			<a class="logo" id="logo_mobile" href="/">
+			</a>
+		</div>
+
+		<div id="header"></div>
+
+		<div id="main" class="fix-sidebar">
+			<div class="sidebar">
+				<div class="sidebar-inner">
+					<div class="list">
+						<h2>
+							目录
+							<!-- <select class="version-select">
+								<option value="SELF" selected="">
+									2.0
+								</option>
+								<option value="v1">
+									1.0
+								</option>
+								<option value="012">
+									0.2
+								</option>
+								<option value="011">
+									0.1
+								</option>
+							</select> -->
+						</h2>
+						<ul class="menu-root">
+							<li>
+								<h3>
+									About Me
+								</h3>
+							</li>
+							<li>
+								<a href="#-about-me-" class="sidebar-link">
+									Contact
+								</a>
+							</li>
+							<li>
+								<h3>
+									About This Page
+								</h3>
+							</li>
+							<li>
+								<a href="#-about-this-page-" class="sidebar-link">
+									GitHub Pages
+								</a>
+							</li>
+							<li>
+								<a href="#-about-this-page-" class="sidebar-link">
+									Notice
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="content guide with-sidebar index-guide">
+				<h2>
+					概述
+				</h2>
+				<p>
+					ESP8266的出现使物联网终端变得易如反掌，如今在家部署些无线设备早已不是什么新鲜事，
+					但是要想开发出界面优美的图形控制程序，还是很伤脑筋。为桌面电脑，安卓和IOS设备分别打造一个图像界面显然划不来。
+					基于HTTP协议的控制程序似乎是不错的选择，可是将庞大的html模板文件连同资源和程序一起烧入芯片，需要不小的空间。
+					我的esp-12片载4MB的flash虽然勉强够用，烧录起来仍然极其繁琐。
+				</p>
+				<p>
+					当然，有人会说解决办法有的是，换一个大容量的芯片，或者租一个云服务器作中介，又或者内网穿透一下。
+					话虽不错，问题在于如果这样干我还要物联网芯片做什么？？？
+					我干嘛不直接把我的二手笔记本电脑接在路由器上，128G的硬盘+4G内存，网盘+服务器都有了，还能加载个网页小游戏呢。
+				</p>
+				<p>
+					要想成为一名合格的技术宅，必须足够任性，我偏要在8266上加载出网页的动画效果。一番思索过后，我想起了GitHub Pages。
+					这个能托管静态网页的开放服务，可以被用来代替储存耗费资源的图形动画，剩下的就是通信的问题了，
+					而xhr的postMessage方法允许跨域访问，这样就实现了子页面与父页面的通信。
+				</p>
+				<h3>
+					抽象原理
+				</h3>
+				<p>
+					1. 在GitHub Pages部署控制程序的图形界面
+					2. 在ESP8266上部署本地的HTTP服务器
+					3. 在本地服务器的网页中使用iframe嵌入GitHub Pages托管的图形界面，并配置为允许跨域访问
+					4. 用户端在嵌入的图形界面里进行操作，网页接收请求后跨域转发到父窗口，也就是本地的网页
+					5. 本地网页最终接收请求，处理，并驱动硬件。
+				</p>
+
+				<p>
+					巧妙通过iframe嵌入方式，实现基于HTTP的GUI。既节省资源，又能方便地做出精美的用户端图形界面
+				</p>
+				<p><img src="/images/dom-tree.png" alt="DOM Tree Visualization"></p>
+				<p>
+					<a class="button gray" href="/projects/iot-gui/iot_prep.html">
+						详细内容
+					</a>
+				</p>
+
+				<div id="footer" class="footer"></div>
+			</div>
+
+		</div>
+	</body>
+</html>

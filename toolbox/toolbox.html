@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<!--
+This page layout is stolen from https://vuejs.org/v2/guide/  with minor adaptation.
+I was just looking for a nice design and was too lazy to search for free templates or create one from scratch.
+Since this page is used for informational purposes, I do not expect to cause any discomfort for any party.
+Hope you find these resources useful :-)
+-->
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>
+			Tool Box
+		</title>
+		<!-- page icon -->
+		<link rel="icon" href="/rsc/logo.png" type="image/png">
+		<!-- page style -->
+		<link rel="stylesheet" href="/rsc/style.css">
+		<!-- page font -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Source+Sans+Pro:wght@300;400;600&display=swap">
+
+		<script src="/rsc/jquery-1.7.2.min.js"></script>
+		<script src="/rsc/three.min.js"></script>
+		<!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/three.js/r57/three.min.js"></script> -->
+
+		<script src="/rsc/userscript.js"></script>
+		<script type="text/javascript">
+			//load external navigation menu before running initialization
+			//initAll() passed as jquery.load callback
+			$(document).ready(function(){
+				$("#header").load("/rsc/header_zh.html",'',initAll);
+				$(".footer").load("/rsc/footer_zh.html");
+			});
+		</script>
+	</head>
+
+	<body class="docs">
+		<div id="mobile-bar">
+			<a class="menu-button">
+			</a>
+			<a class="logo" id="logo_mobile" href="/">
+			</a>
+		</div>
+
+		<div id="header"></div>
+
+		<div id="main" class="fix-sidebar">
+			<div class="sidebar">
+				<div class="sidebar-inner">
+					<h2>目录</h2>
+					<div class="list">
+						<ul class="menu-root">
+								<h3>
+                  高级编程语言
+								</h3>
+							</li>
+							<li>
+								<a href="#-c-" class="sidebar-link">
+									C/C++
+								</a>
+							</li>
+							<li>
+								<a href="#-python-" class="sidebar-link">
+									Python
+								</a>
+							</li>
+							<li>
+								<a href="#-hjc-" class="sidebar-link">
+									HTML/Javascript/CSS
+								</a>
+							</li>
+							<li>
+								<a href="#-prolog-" class="sidebar-link">
+									Prolog
+								</a>
+							</li>
+							<li>
+								<a href="#-vbs-" class="sidebar-link">
+									VBScript
+								</a>
+							</li>
+							<li>
+								<a href="#-ide-" class="sidebar-link">
+									通用开发工具
+								</a>
+							</li>
+							<li>
+								<h3>
+									嵌入式
+								</h3>
+							</li>
+							<li>
+								<a href="#-datasheet-" class="sidebar-link">
+									Datasheet
+								</a>
+							</li>
+							<li>
+								<a href="#-arduino-" class="sidebar-link">
+									Arduino
+								</a>
+							</li>
+							<li>
+								<a href="#-stm32-" class="sidebar-link">
+									STM32
+								</a>
+							</li>
+							<li>
+								<a href="#-micropython-" class="sidebar-link">
+									MicroPython
+								</a>
+							</li>
+							<li>
+								<a href="#-embeded library-" class="sidebar-link">
+									Libray
+								</a>
+							</li>
+							<li>
+								<h3>
+									Linux
+								</h3>
+							</li>
+							<li>
+								<a href="#-installation-" class="sidebar-link">
+									系统安装
+								</a>
+							</li>
+							<li>
+								<a href="#-development-" class="sidebar-link">
+									系统开发
+								</a>
+							</li>
+							<li>
+								<h3>
+									业余无线电HAM
+								</h3>
+							</li>
+							<li>
+								<a href="#-sdr-" class="sidebar-link">
+									软件无线电SDR
+								</a>
+							</li>
+							<li>
+								<a href="#-radio hardware-" class="sidebar-link">
+									硬件
+								</a>
+							</li>
+							<li>
+								<a href="#-radio network-" class="sidebar-link">
+									无线电网络
+								</a>
+							</li>
+							<li>
+								<a href="#-exam-" class="sidebar-link">
+									考试
+								</a>
+							</li>
+
+							<li>
+								<h3>
+									黑科技软件
+								</h3>
+							</li>
+							<li>
+								<a href="#-vm-" class="sidebar-link">
+									模拟器
+								</a>
+							</li>
+							<li>
+								<a href="#-download-" class="sidebar-link">
+									下载器
+								</a>
+							</li>
+							<li>
+								<a href="#-file-" class="sidebar-link">
+									文件助手
+								</a>
+							</li>
+							<li>
+								<a href="#-network-" class="sidebar-link">
+									网络通信
+								</a>
+							</li>
+
+							<li>
+								<h3>
+									在线工具
+								</h3>
+							</li>
+							<li>
+								<a href="#-search-" class="sidebar-link">
+									搜索引擎
+								</a>
+							</li>
+							<li>
+								<a href="#-online doc-" class="sidebar-link">
+									共享文档
+								</a>
+							</li>
+							<li>
+								<a href="#-temp email-" class="sidebar-link">
+									临时邮箱
+								</a>
+							</li>
+							<li>
+								<a href="#-video analysis-" class="sidebar-link">
+									视频解析下载
+								</a>
+							</li>
+							<li>
+								<a href="#-ai api-" class="sidebar-link">
+									智能识别
+								</a>
+							</li>
+							<li>
+								<h3>
+									学术论文/书籍
+								</h3>
+							</li>
+							<li>
+								<a href="#-rsc academics-" class="sidebar-link">
+									资源
+								</a>
+							</li>
+
+							<li>
+								<h3>
+									数据库/开放平台/镜像
+								</h3>
+							</li>
+							<li>
+								<a href="#-rsc database-" class="sidebar-link">
+									资源
+								</a>
+							</li>
+
+							<li>
+								<h3>
+									采购
+								</h3>
+							</li>
+							<li>
+								<a href="#-shopping-" class="sidebar-link">
+									电子元件
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="content guide with-sidebar index-guide">
+				<h1>
+					资源列表
+				</h1>
+				<h2>
+					高级编程语言
+				</h2>
+				<h3 id="-c-">
+					C/C++
+				</h3>
+				<p>
+					<a href="https://vdisk.weibo.com/s/al6dG90H0_dcq?category_id=0&parents_ref=al6dG90H0_dec,al6dG90H0_der">
+						C Programming Language
+					</a>
+					by Brian W. Kernighan abd Dennis M. Ritchie， 俗称
+					<strong>
+						K&R
+					</strong>
+					 | C语言的经典之作，其内容覆盖的不仅仅是C语言的语法，更包含这个奇妙而又怪异的语言背后深邃的内涵。
+				</p>
+				<p class="tip">
+					进年来支持文言文编程，汉语编程的环境已逐步成熟，还出现了Zhanyong Wan利用Python二次开发的以东北方言为关键字的编程语法
+					<a href="https://github.com/zhanyong-wan/dongbei">
+						dongbei
+					</a>
+					。然而笔者想在这里说一句，在我们享受这些开源工作者提供的便利时，应该留意思考隐藏在语法背后的信息处理原则。
+					不管是编程语言，自然语言还是数学语言，一切产生意义的信号，本身只有其物理性质。<br>
+					<a>"言者所以在意，得意而忘言。" - 《庄子·外物》</a>
+				<p>
+					<a href="https://bloodshed-dev-c.en.softonic.com/">
+						Dev C++
+					</a>
+					| Windows 平台的C/C++开发工具，历史悠久，开源集成。
+				</p>
+				<p>
+					<a href="http://mingw.org/">
+						GCC Tool for Windows
+					</a>
+					| 这年头一般要用集成IDE了，不过没有IDE的时候安装了这个也能写码。居安思危，熟悉command line和notepad，关键时刻永远处变不惊。
+				</p>
+
+				<h3 id="-python-">
+					Python
+				</h3>
+				<p>
+					<a href="https://mirrors.tuna.tsinghua.edu.cn/help/pypi/">
+						PyPI 清华大学镜像站
+					</a>
+					解决pip下载缓慢。如何配置及其它镜像资源，参考<a href="https://zhuanlan.zhihu.com/p/37254669">知乎这篇</a>
+				</p>
+				<p>
+					<a href="https://wheel.readthedocs.io/">
+						Wheel
+					</a>
+					Python库的解压安装工具，方便pip安装本地压缩包（好像也能打包？这就不晓得了，笔者还没发布过python的库 -_-!）。
+				</p>
+				<p>
+					<a href="https://pyserial.readthedocs.org/en/latest/">
+						PySerial
+					</a>
+					Python的串口库，方便调试数据可视化
+				</p>
+				<p>
+					<a href="https://pythonhosted.org/pyserial/">
+						TOML
+					</a>
+					Python的toml库，配置文件再无压力。
+				</p>
+				<p>
+					<a href="https://pymupdf.readthedocs.io/en/latest/document/">
+						MuPDF
+					</a>
+					可以非常便捷的用python操作PDF文件，支持读取修改目录，书签，标注，剪辑，合并等等。
+				</p>
+				<p>
+					<a href="https://click.palletsprojects.com/en/7.x/">
+						Click
+					</a>
+					用python轻松创建一个属于你的命令行交互界面 （不知道什么时候会用到这个，
+					也许你有一天会觉得某些terminal看起来不顺眼，那就是大干一场的时候了，到时请记得分享）。
+				</p>
+				<p>
+					<a href="https://github.com/mhammond/pywin32">
+						PyWin32
+					</a>
+					提供windows强大的软硬件接口。
+					Windows出10了，API越来越高端了，软件开发也有UWP了，但像笔者这样从底层折腾起来的人，还是win32的API用着顺手，简单粗暴。
+				</p>
+				<p>
+					<a href="https://github.com/ActiveState/appdirs">
+						appdirs
+					</a>
+					解决python跨平台（或者不跨平台）时各种奇葩的路径问题。
+				</p>
+				<p>
+					<a href="https://github.com/skywind3000/ecdict">
+						ECDict
+					</a>
+					某位高人为python制作的包含340万词汇量的中英词典。340万什么概念，就是你看着不像单词的词这里面都收录了。-_-!
+				</p>
+				<p>
+					<a href="https://pillow.readthedocs.io/en/latest/handbook/index.html">
+						Pillow
+					</a>
+					Python的一个图像处理工具，用openCV也行，我一般一块儿用。
+				</p>
+
+
+				<h3 id="-hjc-">
+					HTML/Javascript/CSS
+				</h3>
+				<p>
+					<a href="https://www.tampermonkey.net/">
+						TemperMonkey
+					</a>
+					可以让浏览器打开网页时注入自定义js代码，有社区支持，但也要防范一些用户发布的恶意脚本。搭配adblock，可以个（破）性（解）化（掉）99%的网站。
+					虽然python有强大的selenium和pySpider，但是除非你制作和维护大型爬虫程序的频率很高，否则使用浏览器自带的开发者工具搭配js屏蔽/注入就足够方便了。
+				</p>
+				<p>
+					<a href="https://electronjs.org/">
+						Electron
+					</a>
+					使开发者能够用 JavaScript, HTML 和 CSS 构建跨平台的桌面应用。
+				</p>
+				<p>
+					<a href="https://github.com/opendigg/awesome-github-vue">
+						Vue
+					</a>
+					基于VUE.js的开源项目库汇总
+				</p>
+
+				<h3 id="-prolog-">
+					Prolog
+				</h3>
+				<p>
+					<a href="http://www.ruanyifeng.com/blog/2019/01/prolog.html">
+						入门教程
+					</a>
+					逻辑语言，看着挺好玩的。
+				</p>
+				<h3 id="-vbs-">
+					VBscript
+				</h3>
+				<p>
+					<a href="https://www.runoob.com/vbscript/vbscript-tutorial.html">
+						入门教程
+					</a>
+					你也许没有听说过这个语言，而且永远也不会用到，但是作为笔者的入坑语言，还是怀念一下，毕竟在某个时代它可以在IE和windows XP上轻松运行。
+				</p>
+				<h3 id="-ide-">
+					通用开发工具
+				</h3>
+				<p>
+					<a href="https://c.runoob.com/">
+						runoob在线IDE
+					</a>
+					随时随地测试代码，这个必须顶！！！支持浏览器在线运行Python, Java, C++, C#, Pascal, Ruby, Perl, RUST, Swift, Go, Node.js...
+					好吧我放弃了，只有你不认识的语言，没有它不能运行的代码！包括各种前端工具，格式化，转换器/编码器。
+				</p>
+				<p>
+					<a href="http://ideone.com">
+						IDE One
+					</a>
+					另一个支持多种语言的在线IDE，也还不错。
+				</p>
+				<p>
+					<a href="https://atom.io/">
+						Atom
+					</a>
+					通用集成多平台开源代码编辑器，功能强大，插件支持友好。
+				</p>
+				<p>
+					<a href="https://code.visualstudio.com/docs/remote/remote-overview">
+						VS Code Remote Development
+					</a>
+					强大的远程开发工具。VS Code 多年前用过，因功力不够，没鼓捣明白，沦为陌路。但是这个Remote Extension Package让我拾起了重修旧好的勇气。
+				</p>
+
+				<h2>
+					嵌入式
+				</h2>
+				<h3 id="-datasheet-">
+					Datasheet
+				</h3>
+				<p>
+					<a href="http://www.alldatasheetcn.com/">
+						AllDatasheet
+					</a>
+					比较好用的数据手册查询网站
+				</p>
+				<h3 id="-arduino-">
+					Arduino
+				</h3>
+				<p>
+					<a href="https://www.sites.google.com/site/unoardusim/">
+						UnoArduSim
+					</a>
+					Arduino Uno 模拟器 for Windows
+				</p>
+				<h3 id="-stm32-">
+					STM32
+				</h3>
+				<p>
+					<a href="http://openedv.com/thread-13912-1-1.html">
+						正点原子论坛
+					</a>
+					技术交流，资料下载，淘宝商店，一应俱全。由此公司出版的书也是相当不错的学习资料。
+				</p>
+				<h3 id="-micropython-">
+					MicroPython
+				</h3>
+				<p>
+					<a href="http://micropython.org/">
+						官网
+					</a>
+					用python开发单片机，很有想法。网上的介绍：MicroPython本身使用GNU C进行开发，在ST公司的微控制器上实现了Python 3的基本功能，拥有完善的解析器、编译器、虚拟机和类库等。
+					在保留了python语言主要特性的基础上，他还对嵌入式系统的底层做了非常不错的封装，将常用功能都封装到库中，甚至为一些常用的传感器和硬件编写了专门的驱动。
+					我们使用时只需要通过调用这些库和函数，就可以快速控制LED、液晶、舵机、多种传感器、SD、UART、I2C等，实现各种功能，而不用再去研究底层模块的使用方法
+					（说了半天 嵌入式开发还是从寄存器一点点来比较好，这个只是实现效率，不推荐学习用）。
+				</p>
+
+				<h3 id="-embeded library-">
+					库
+				</h3>
+				<p>
+					<a href="https://www.i2cdevlib.com/">
+						I2CDev
+					</a>
+					最流行的I2C驱动，支持多种处理器。官网近期好像瘫痪过一次，给个
+					<a href="https://github.com/jrowberg/i2cdevlib">github地址</a>。
+				</p>
+				<p>
+					<a href="https://www.freertos.org/">
+						FreeRTOS
+					</a>
+					开源的抢占式实时内核。
+				</p>
+				<p>
+					<a href="https://github.com/TKJElectronics/KalmanFilter">
+						卡尔曼滤波
+					</a>
+					库很多，这个感觉好使点，之前用过一个人的，写注释不知道用的哪国语言。。。
+				</p>
+
+				<h2>
+					Linux
+				</h2>
+				<h3 id="-installation-">
+					系统安装
+				</h3>
+				<p>
+					<a href="https://rufus.ie/">
+						Rufus
+					</a>
+					好用的刻盘小工具
+				</p>
+				<p>
+					<a href="https://rime.im/">
+						RIME
+					</a>
+					中文输入法
+				</p>
+				<p>
+					<a href="http://linux.vbird.org/linux_basic/0130designlinux.php">
+						鳥哥的 Linux 私房菜 | 第二章 - 主機與磁盤分割
+					</a>
+					装机最不懂的地方就是分区，毕竟很少有人在意硬盘管理是怎么一回事（笔者还停留在系统装C盘，文件放D盘的水平）。
+					推荐鸟哥的教学网站，站内也有全面的Linux介绍。（不知道他的简体网站的翻译进度如何，顺便练习下繁体字阅读能力吧。。。）
+				</p>
+				<h3 id="-development-">
+					系统开发
+				</h3>
+				<p>
+					<a href="#">
+						深入理解计算机系统（暂无链接）
+					</a>
+					(Computer Systems: A Programmer's Perspective) by Randal E. Bryant & David R. O'Hallaron
+					“我们的世界已经发展到这样一种形态，在这个时代下，没有一个个体可以独自掌握人类的全部知识。”
+					没错，你不再能一个人搞定一个Linux内核的开发，你甚至无法阅读完它的全部代码，但是通过这本书，你可以隐约地看到一个现代操作系统的全貌。
+				</p>
+				<p>
+					<a href="#">
+						The Linux Programming Interface（暂无链接）
+					</a>
+					一本秘籍走江湖
+				</p>
+
+				<h2>
+					业余无线电
+				</h2>
+				<h3 id="-sdr-">
+					软件定义无线电 SDR
+				</h3>
+				<p>
+					<a href="https://airspy.com/download/">
+						AirSpy SDR
+					</a>
+					比较常用，自带ADS-B，支持Windows和Linux。
+				</p>
+				<p>
+					<a href="https://www.gnuradio.org">
+						GNU Radio
+					</a>
+					GNU的开源项目，不必多说，旗下有社区维护的各类无线电软硬件设备和网络系统。给个
+					<a href="http://gnuradio.microembedded.com/">中文社区</a>
+					用来快速上手。
+				</p>
+				<h3 id="-radio hardware-">
+					硬件
+				</h3>
+				<p>
+					<a href="https://www.rtl-sdr.com/">
+						RTL-SDR
+					</a>
+					这是个有故事的电视棒，官网上有详细说明。接收范围24~1700MHz，绕过Tuner可以接受到低至500KHz的频段。
+				</p>
+				<p>
+					<a href="http://gnuradio.microembedded.com/usrp">
+						USRP
+					</a>
+					通用软件无线电外设（Universal Software Radio Peripheral）。旨在使普通计算机能像高带宽的软件无线电设备一样工作。
+					从本质上讲，它充当了一个无线电通讯系统的数字基带和中频部分。（瞅着不赖，溜去查查价格）
+				</p>
+
+				<h3 id="-radio network-">
+					无线电网络
+				</h3>
+				<p>
+					<a href="http://gnuradio.microembedded.com/openbts">
+						OpenBTS
+					</a>
+					开源项目，旨在打造一个基于软件定义无线电的通讯网络，可使用GNU Radio + USPR 配合GSM空中接口和VoIP实现的低廉GSM通信网络
+				</p>
+				<p>
+					<a href="http://www.aprs.org/">
+						APRS
+					</a>
+					自动位置回报系统（Automatic Packet Report System） 为业余无线电中的一个项目，
+					结合业余无线电和全球卫星定位系统（GPS）以AFSK AX.25协议达到即时位置传送的目的。
+					因为是分布式网络，没有中心节点，也没有数据共享，主要靠各地爱好者架设天线和中继器。于是
+					<a href="https://baike.baidu.com/item/%E8%87%AA%E5%8A%A8%E4%BD%8D%E7%BD%AE%E5%9B%9E%E6%8A%A5%E7%B3%BB%E7%BB%9F/22755851?fromtitle=APRS&fromid=5893812#5">
+						APRS-IS
+					</a>
+					（APRS互联网服务）应运而生。在以下这些服务器平台上可查看周围网络节点。
+					<ul>
+						<li>
+							aprs.fi平台： https://aprs.fi/
+						</li>
+						<li>
+							HelloCQ APRS平台： http://aprs.hellocq.net/
+						</li>
+					</ul>
+					<br></br>
+					 用户可使用开源软件<a href="https://github.com/wb2osz/direwolf">Dire Wolf</a>
+					 搭配上文硬件中提到的无线收发器器轻松建立Digipeater，iGate, 以及Beacon。项目页面里有详细的介绍。
+				</p>
+
+				<h3 id="-exam-">
+					考试
+				</h3>
+				<p>
+					<a href="https://bh4dks.com/">
+						业余无线电考试练习网站
+					</a>
+					可以在手机、平板、电脑上练习, 并且支持自动记录错题,便于着重复习。同时还能记录整体练习进度, 是业余无线电考试的好帮手。
+				</p>
+
+				<h2>
+					黑科技软件
+				</h2>
+				<h3 id="-vm-">
+					模拟器
+				</h3>
+				<p>
+					<a href="https://www.virtualbox.org/">
+						Oracle VirtualBox
+					</a>
+					Oracle不必多说，虚拟环境用它准没错
+				</p>
+				<p>
+					<a href="https://www.bignox.com/">
+						Nox
+					</a>
+					夜神安卓模拟器
+				</p>
+				<p>
+					<a href="https://www.sites.google.com/site/unoardusim/">
+						UnoArduSim
+					</a>
+					Arduino Uno 模拟器 （Windows）
+				</p>
+				<h3 id="-download-">
+					下载器
+				</h3>
+				<p>
+					<a href="https://www.jijidown.com/">
+						B站下载器
+					</a>
+					下载完成提示音很有个性。
+				</p>
+				<p>
+					<a href="https://pandownload.com/index.html">
+						PanDownload
+					</a>
+					百度盘下载器。注：由于百度网盘升级，超过30M文件地址获取不到，只能登陆后下载，如果你有网盘账号的话应该不是问题。
+				</p>
+				<p>
+					<a href="https://www.xunlei.com/">
+						迅雷X
+					</a>
+					迅雷这次更新简直蜕变为神器巅峰之作。P2P加速？区块链？共享计算？笔者也搞不清楚这都是啥，反正下载快就是了。
+				</p>
+				<p>
+					<a href="https://motrix.app/">
+						Motrix
+					</a>
+					干净灵巧的下载器，支持BT，种子，磁链，直链。不过效果似乎不及迅雷。
+					作为开源的工程，自然有被限制的弱点，道高一尺魔高一丈，自己的路自己走。
+				</p>
+				<p>
+					<a href="https://github.com/ytdl-org/youtube-dl">
+						Youtube下载器
+					</a>
+					不多说，谨言慎行。
+				</p>
+				<p>
+					<a href="https://pan.baidu.com/s/1TiwM-N7uNlA5Y0KBvi2dVg">
+						Sci-Hub客户端
+					</a>
+					鉴于Sci-Hub官网开放搜索功能被围追堵截的性质，可以考虑用客户端。
+				</p>
+				<h3 id="-file-">
+					文件助手
+				</h3>
+				<p>
+					<a href="https://www.voidtools.com/">
+						Void Tool
+					</a>
+					Windows的资源管理器搜索功能让你抓狂？试试这个强大的文件检索工具。它在启动时扫描整个硬盘，几秒钟后，你将能够瞬间检索所有硬盘文件。
+				</p>
+				<p>
+					<a href="https://www.microsoft.com/en-us/download/details.aspx?id=15155">
+						Sync Toy
+					</a>
+					文件备份工具，微软10年前的小制作，能力令人惊叹。提供三种文件备份方式：增量式，回传式，同步式。
+				</p>
+				<h3 id="-network-">
+					网络通信
+				</h3>
+				<p>
+					<a href="https://www.vultr.com/">
+						Vultr VPS
+					</a>
+					优质又便宜的外国虚拟服务器，一个月$5，还支持支付宝和Bitcoin。Centos, Debian, Windows Server等系统应有尽有。
+				</p>
+				<p>
+					<a href="https://www.v2ray.com/">
+						V2Ray
+					</a>
+					某高人开发的传输层流量转发程序，支持Socks、Shadowsocks、VMess，笔者还在研究它这个HTTP的伪装是什么东西。
+					<a href="https://chrad.ml/2018/03/v2ray/">这里附上教程</a>。
+					国内自然访问不了官网，给个 <a href="https://github.com/v2ray/v2ray-core/releases">GitHub</a>
+				</p>
+				<p>
+					<a href="https://openvpn.net/">
+						OpenVPN
+					</a>
+					开源VPN程序，包含服务端和客户端。
+					不必说，下载还是得去 <a href="https://github.com/OpenVPN/openvpn">GitHub</a>
+				</p>
+				<p>
+					<a href="https://www.bitvise.com/">
+						Bitvise
+					</a>
+					SSH客户端。那时候win10还没有ssh，用putty好不容易才连上VPS。后来听说了这个Bitvise还自带图形界面的SFTP
+					（第一次打开它时，笔者正在一脸愁苦的查阅FTP命令，见到它简直激动到不能自已，从此da svidania putty）。
+				</p>
+				<p>
+					<a href="https://www.torproject.org/">
+						Tor
+					</a>
+					不多说了，一般人挂vpn就行了，用这玩意儿干嘛。
+				</p>
+				<p>
+					<a href="https://docs.microsoft.com/en-us/sysinternals/downloads/psping">
+						PsPing
+					</a>
+					Windows Ping的加强版，一些测试网络的功能。
+				</p>
+				<p>
+					<a href="https://github.com/xiangyuecn/Recorder">
+						Web网聊天室
+					</a>
+					HTML5框架的局域网聊天室，不过搭配上文的VPS+OpenVPN就可以随时随地聊天了~ 支持录音对讲。
+				</p>
+				<p>
+					<a href="https://www.tampermonkey.net/">
+						TemperMonkey
+					</a>
+					可以让浏览器打开网页时注入自定义js代码，有社区支持，但也要防范一些用户发布的恶意脚本。搭配adblock，可以个（破）性（解）化（掉）99%的网站。
+					虽然python有强大的selenium和pySpider，但是除非你制作和维护大型爬虫程序的频率很高，否则使用浏览器自带的开发者工具搭配js屏蔽/注入就足够方便了。
+				</p>
+
+				<h2>
+					在线工具
+				</h2>
+				<h3 id="-search-">
+					搜索引擎
+				</h3>
+				<p>
+					<a href="https://www.mijisou.com/">
+						秘迹搜索
+					</a>
+					无cookies，无账号，无跟踪，无污染的搜索引擎。隐私，你值得拥有。
+				</p>
+				<p>
+					<a href="http://www.sjxt.com/">
+						这个不知道叫啥
+					</a>
+					这里收录了世界上形形色色的网站。英国的《魅力》杂志，以色列的网站建设工具WIX，日本的SD娃娃销售网，伊朗的国家广播电台，
+					非洲国家大部分能找到中国驻xxx使馆官网。。。
+				</p>
+				<h3 id="-online doc-">
+					共享文档
+				</h3>
+				<p>
+					<a href="https://www.weiyun.com/">
+						腾讯文档
+					</a>
+					国内代替Google Docs。
+				</p>
+				<p>
+					<a href="https://shimo.im/welcome">
+						石墨文档
+					</a>
+					同上
+				</p>
+				<h3 id="-temp email-">
+					临时邮箱
+				</h3>
+				<p>
+					<a href="https://www.guerrillamail.com/">
+						Guerrilla Mail
+					</a>
+					最知名的免费临时邮箱服务器
+				</p>
+				<p>
+					<a href="https://temp-mail.org/">
+						Temp Mail
+					</a>
+					这个有Web API的，懒得自己写收发器了，谁有资源希望分享一下~
+				</p>
+				<h3 id="-video analysis-">
+					视频解析下载
+				</h3>
+				<p>
+					<a href="https://y2mate.com/">
+						Y2mate
+					</a>
+					YouTuebe在线解析下载
+				</p>
+				<p>
+					<a href="http://vip.vrzyzz.com/">
+						VIP视频解析
+					</a>
+					支持爱奇艺，腾讯等各大视频网站
+				</p>
+				<p>
+					<a href="http://v.yizhansou.com/mv">
+						一站搜（已消失）
+					</a>
+					搜索网上各类影视资源，配合解析软件效果最佳
+				</p>
+
+				<h3 id="-ai api-">
+					智能识别
+				</h3>
+				<p>
+					<a href="https://www.xfyun.cn/services/voicedictation">
+						讯飞语音识别API
+					</a>
+				</p>
+				<p>
+					<a href="https://onlineocr.net/">
+						文字识别网站
+					</a>
+				</p>
+
+				<h2 id="-rsc academics-">
+					学术论文/书籍
+				</h2>
+				<p>
+					<a href="http://b-ok.xyz/">
+						Electronic Libray
+					</a>
+					收集目录极其庞大的电子书数据库。
+				</p>
+				<p>
+					<a href="http://tool.yovisun.com/scihub/">
+						Sci-Hub
+					</a>
+					收集目录更加庞大的学术论文数据库，宗旨是知识无界（...to remove all barriers in the way of science）。
+				</p>
+				<p>
+					<a href="https://www.semanticscholar.org/">
+						Semantic Scholar
+					</a>
+					学术论文查询网站，不是很全，不过搜索功能很强，可以查看相关Topic。
+				</p>
+				<p>
+					<a href="https://ebooks.adelaide.edu.au/">
+						Adelaide University Archive
+					</a>
+					学校档案库，可以找到一些过去的书籍，文件。
+				</p>
+				<p>
+					<a href="https://epubw.com/">
+						EpubW
+					</a>
+					各类中文电子书，提供epub+azw3+pdf三种格式，建议结合上文提到的百度网盘下载器使用。
+				</p>
+
+
+				<h2 id="-rsc database-">
+					数据库/开放平台/镜像
+				</h2>
+				<p>
+					<a href="https://archive.org/">
+						Internet Archive
+					</a>
+					神奇的各类音频，视频，文字档案。
+				</p>
+				<p>
+					<a href="https://ocw.mit.edu/index.htm">
+						MIT OpenCourseWare
+					</a>
+					MIT的开放课程中心，一部分课在YouTube上有全程Lecture录像。
+				</p>
+				<p>
+					<a href="https://mirrors.tuna.tsinghua.edu.cn/">
+						清华大学开源软件镜像
+					</a>
+				</p>
+				<p>
+					<a href="https://www.debian.org/mirror/list">
+						Debian世界各地镜像
+					</a>
+					以及
+					<a href="http://mirrors.ustc.edu.cn/debian/">FTP 中国镜像</a>
+				</p>
+				<p>
+					<a href="https://www.ncbi.nlm.nih.gov/">
+						National Center for Biotechnology Information
+					</a>
+					生物技术信息数据库，看着贼NB，基因序列都能查，我只会用生物物种分类树。
+				</p>
+				<p>
+					<a href="https://www.usgs.gov/">
+						美国地质勘探局（USGS）地图数据
+					</a>
+					卫星图，等高线图，地质数据等
+				</p>
+				<p>
+					<a href="http://www.beidou-lbs.com/comServBDIntro.html">
+						北斗卫星开放平台
+					</a>
+					可以查阅卫星发射信息，星座，空间传输协议等。
+				</p>
+				<p>
+					<a href="http://www.sp2000.org.cn/">
+						Species 2000 中国节点
+					</a>
+					每年更新的中国物种名录。站内可以转到其它国家和地区。
+				</p>
+
+				<h2 id="-shopping-">
+					采购
+				</h2>
+				<p>
+					<a href="https://www.jameco.com/">
+						Jameco
+					</a>
+					半导体配件，机电元件和电路配件。笔者在美国用过，体验不错，价格也比Amazon便宜。
+				</p>
+				<br>
+
+				<div class="footer">
+					<strong>
+						GitHub |
+						<a>
+							Sharing is Growing
+						</a>
+					</strong>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

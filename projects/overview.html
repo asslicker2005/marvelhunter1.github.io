@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--
+If you find the appearance of this page somewhat familiar, it is not a coincidence!
+This is adapted from https://vuejs.org/v2/guide/ , with most of its layout directly copied plus minor editing.
+I was just looking for a nice design and was too lazy to search for free templates or create one from scratch.
+Since this page is used for informative purposes, I do not expect to cause any discomfort for any party.
+Hope you find these resources useful :-)
+-->
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>
+			Welcome!
+		</title>
+		<!-- page icon -->
+		<link rel="icon" href="/rsc/logo.png" type="image/png">
+		<!-- page style -->
+		<link rel="stylesheet" href="/rsc/style.css">
+		<!-- page font -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Source+Sans+Pro:wght@300;400;600&display=swap">
+
+		<script src="/rsc/jquery-1.7.2.min.js"></script>
+		<script src="/rsc/three.min.js"></script>
+		<!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/three.js/r57/three.min.js"></script> -->
+
+		<script src="/rsc/userscript.js"></script>
+		<script type="text/javascript">
+			//load external navigation menu before running initialization
+			//initAll() passed as jquery.load callback
+			$(document).ready(function(){
+				$("#header").load("/rsc/header_zh.html",'',initAll);
+				$(".footer").load("/rsc/footer_zh.html");
+			});
+		</script>
+	</head>
+
+	<body class="docs">
+		<div id="mobile-bar">
+			<a class="menu-button">
+			</a>
+			<a class="logo" id="logo_mobile" href="/">
+			</a>
+		</div>
+
+		<div id="header"></div>
+
+		<div id="main" class="fix-sidebar">
+			<div class="sidebar">
+				<div class="sidebar-inner">
+					<div class="list">
+						<h2>
+							目录
+							<!-- <select class="version-select">
+								<option value="SELF" selected="">
+									2.0
+								</option>
+								<option value="v1">
+									1.0
+								</option>
+								<option value="012">
+									0.2
+								</option>
+								<option value="011">
+									0.1
+								</option>
+							</select> -->
+						</h2>
+						<ul class="menu-root">
+							<li>
+								<h3>
+									About Me
+								</h3>
+							</li>
+							<li>
+								<a href="#-about-me-" class="sidebar-link">
+									Contact
+								</a>
+							</li>
+							<li>
+								<h3>
+									About This Page
+								</h3>
+							</li>
+							<li>
+								<a href="#-about-this-page-" class="sidebar-link">
+									GitHub Pages
+								</a>
+							</li>
+							<li>
+								<a href="#-about-this-page-" class="sidebar-link">
+									Notice
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="content guide with-sidebar index-guide">
+				<h2>
+					单轴无人机
+				</h2>
+				<p>
+					如今四旋翼的发展已经是换汤不换药，偶然看到韩国某大学的单轴无人机实验，颇感新鲜，亲手尝试一下。
+				</p>
+				<p>
+					<a class="button gray" href="/projects/uav-mono/uav_prep.html">
+						详细内容
+					</a>
+				</p>
+
+				<h2>
+					物联网用户控制终端 | 精简版解决方案
+				</h2>
+				<p>
+					巧妙通过iframe嵌入方式，实现基于HTTP的GUI。既节省资源，又能方便地做出精美的用户端图形界面
+				</p>
+				<p><img src="/images/dom-tree.png" alt="DOM Tree Visualization"></p>
+				<p>
+					<a class="button gray" href="/projects/iot-gui/iot_prep.html">
+						详细内容
+					</a>
+				</p>
+
+				<div id="footer" class="footer"></div>
+			</div>
+
+		</div>
+	</body>
+</html>
