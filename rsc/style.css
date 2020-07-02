@@ -1721,8 +1721,13 @@ ul.demo li {
 }
 .content ul,
 .content ol {
+  list-style-type:demical;
+  /* width:200px; */
   padding-left: 1.5em;
   position: inherit;
+}
+.content ol li{
+  list-style-position:outside;
 }
 .content ul ul,
 .content ol ul,

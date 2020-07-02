@@ -2,13 +2,20 @@
  *刻石录钢笔鹤体
  */
 
-/* Collection */
-@font-face {
+/* @font-face {
   font-family: "Pen Crane";
   font-style: normal;
   font-weight: normal;
-  src: url("font-PenCrane-B-2.ttf") format('truetype');
-}
+  src: url("/rsc/font-PenCrane-B-2.ttf") format('truetype');
+} */
+
+/* Quicksand */
+/* @font-face {
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/rsc/font-Quicksand-regular.woff2") format('woff2');
+} */
 
 :root {
   --sky: #010641;
@@ -29,7 +36,7 @@
 }
 
 html, body {
-  font-family: 'Noto Sans SC', 'Pen Crane';  /* 'Pen Crane Simplified'  */
+  font-family: 'Quicksand', 'Noto Sans SC', 'Pen Crane';  /* 'Pen Crane Simplified'  */
   font-weight: 200: ;
   color: #fff;
   width: 100%;
@@ -67,7 +74,7 @@ body {
 .prompt {
   /* visibility: hidden; */
   display: none;
-  opacity: 0.8;
+  opacity: 0.9;
   font-size: 16pt;
   text-align: center;
   top:100%;

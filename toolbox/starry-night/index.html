@@ -8,80 +8,11 @@
   <script src="/rsc/jquery-1.7.2.min.js"></script>
   <!-- page font -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@200;300&family=Source+Sans+Pro:wght@300&display=swap">
-  <script src='./rsc/userscript.js'></script>
-  <link rel="stylesheet" href="./rsc/style_starrynight.css">
-  <script type="text/javascript">
-    $(document).ready(function(){
-			fade_speed=3000 //milli second
-      x_max=document.body.offsetWidth;
-      y_max=document.body.offsetHeight;
-			countDown();
-      running=setInterval("countDown()",fade_speed)
+  <script src='./rsc/userscript-starrynight.js'></script>
+  <link rel="stylesheet" href="./rsc/style-starrynight.css">
+  <!-- <script type="text/javascript">
 
-			var start = {}, end = {}
-
-		  document.body.addEventListener('touchstart', function (e) {
-		    start.x = e.changedTouches[0].clientX
-		    start.y = e.changedTouches[0].clientY
-		  })
-
-		  document.body.addEventListener('touchend', function (e) {
-				$('.prompt').hide();
-		    end.y = e.changedTouches[0].clientY
-		    end.x = e.changedTouches[0].clientX
-
-		    var xDiff = end.x - start.x
-		    var yDiff = end.y - start.y
-
-		    if (Math.abs(yDiff) > Math.abs(xDiff) && Math.abs(yDiff) > 0.2*document.body.offsetHeight) {
-					console.log('touch activated')
-		      if (yDiff < 0 && start.y <= document.body.offsetHeight) $(location).attr('href','/');
-		    }
-			})
-
-			document.body.addEventListener('touchmove', function (e) {
-				$('.prompt').show();
-		  })
-
-      // $('body').mousedown(function(e){
-			// 	$('.wave').css({'left':e.pageX.toString()+'px', 'top':e.pageY.toString()+'px'});
-      //   $('.wave').show();
-			// 	$('.wave').animate({
-			//     opacity:'0.5',
-			//     height:'150px',
-			//     width:'150px'
-			//   });
-      // });
-    });
-
-    function Rando(min, max) {
-      return Math.floor(Math.random() * (max - min) + min ) ;
-    }
-
-    var at=1;
-    var max=10;
-    var toggle=true;
-    function countDown(){
-      var div='#div1'
-      if(toggle==true){
-        var new_x=Rando(x_max*0.2,x_max*0.7)
-        var new_y=Rando(y_max*0.2,y_max*0.7)
-        var index = Math.floor(Math.random() * txt.love.length)
-        $(div).css({'left':new_x.toString()+'px', 'top':new_y.toString()+'px'});
-        $("#p1").text(txt.love[index]);
-        toggle=false
-        at=at+1
-      }
-      else{
-        toggle=true
-      }
-
-      $(div).fadeToggle(fade_speed);
-      if(at>max){
-        clearInterval(running)
-      }
-    }
-  </script>
+  </script> -->
 </head>
 <body>
   <div id='div1' class="fixed">

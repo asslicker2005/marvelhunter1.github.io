@@ -84,24 +84,32 @@ Hope you find these resources useful :-)
 			</div>
 			<div class="content guide with-sidebar index-guide">
 				<h2>
-					概述
+					用到的材料
+				</h2>
+				<h3>硬件</h3>
+				<p>
+					ESP8266开发板：这个没什么好说的，注意一下烧写时候的引脚就是了。
+				</p>
+				<p>
+					IDE或其它开发环境和烧写工具：这里多说两句，一块小小的板子，本身原厂的开发环境还只能支持linux，
+					却因为庞大的社区衍生出了无数的开发方式。目前安信可有Eclipse的编译环境，NodeMCU有lua语言的编译环境，
+					笔者这里使用的Arduino IDE，编译下载完全集成，配置可参照
+					<a href="https://www.jianshu.com/p/cb0274d612b5">这篇</a>
+				</p>
+				<h3>软件</h3>
+				<p>
+					软件：本地HTTP文件 | 远程HTTP文件 | esp8266协议栈和控制程序
+				</p>
+				<h2>
+
 				</h2>
 				<p>
-					ESP8266的出现使物联网终端变得易如反掌，如今在家部署些无线设备早已不是什么新鲜事，
-					但是要想开发出界面优美的图形控制程序，还是很伤脑筋。为桌面电脑，安卓和IOS设备分别打造一个图像界面显然划不来。
-					基于HTTP协议的控制程序似乎是不错的选择，可是将庞大的html模板文件连同资源和程序一起烧入芯片，需要不小的空间。
-					我的esp-12片载4MB的flash虽然勉强够用，烧录起来仍然极其繁琐。
+					软件：本地HTTP文件 | 远程HTTP文件 | esp8266协议栈和控制程序
 				</p>
-				<p>
-					当然，有人会说解决办法有的是，换一个大容量的芯片，或者租一个云服务器作中介，又或者内网穿透一下。
-					话虽不错，问题在于如果这样干我还要物联网芯片做什么？？？
-					我干嘛不直接把我的二手笔记本电脑接在路由器上，128G的硬盘+4G内存，网盘+服务器都有了，还能加载个网页小游戏呢。
-				</p>
-				<p>
-					要想成为一名合格的技术宅，必须足够任性，我偏要在8266上加载出网页的动画效果。一番思索过后，我想起了GitHub Pages。
-					这个能托管静态网页的开放服务，可以被用来代替储存耗费资源的图形动画，剩下的就是通信的问题了，
-					而postMessage方法允许跨域访问，这样就实现了子页面与父页面的通信。
-				</p>
+				<pre>
+					<code class='hljs html'>
+					</code>
+				</pre>
 				<h3>
 					拓扑结构：三端互联
 				</h3>
@@ -116,12 +124,12 @@ Hope you find these resources useful :-)
 				</p>
 
 				<p>
-					iframe的嵌入将耗费资源的工作交给用户端，服务器仅需处理提交的指令，可以扩展，方便维护。
+					巧妙通过iframe嵌入方式，实现基于HTTP的GUI。既节省资源，又能方便地做出精美的用户端图形界面
 				</p>
-				<p><img src="pb.png" alt="Power Button"></p>
+				<p><img src="/images/dom-tree.png" alt="DOM Tree Visualization"></p>
 				<p>
 					<a class="button gray" href="/projects/iot-gui/iot_prep.html">
-						GitHub 仓库
+						详细内容
 					</a>
 				</p>
 
