@@ -39,7 +39,7 @@ var txt={
   ]
 }
 
-var music={
+var song={
   provider: '163 music',
   api: {
     music:'https://api.imjad.cn/cloudmusic/?type=song&id=', //&br=64000, 128000(default), 198000, 320000
@@ -51,148 +51,36 @@ var music={
     // {"songs":[{"name":"在这个世界相遇-钢琴版（《潮流琴房》曲谱试听）","id":421110801,"pst":0,"t":0,"ar":[{"id":1197082,"name":"文武贝","tns":[],"alias":[]}],"alia":[],"pop":95.0,"st":0,"rt":"","fee":0,"v":92,"crbt":null,"cf":"","al":{"id":34777765,"name":"《潮流琴房》（乐谱音频）","picUrl":"https://p2.music.126.net/QXI329jEogBgxr2GM93vjQ==/109951162819438408.jpg","tns":[],"pic_str":"109951162819438408","pic":109951162819438408},"dt":189903,"h":{"br":320000,"fid":0,"size":7604811,"vd":670.0},"m":{"br":192000,"fid":0,"size":4562904,"vd":3742.0},"l":{"br":128000,"fid":0,"size":3041951,"vd":7172.0},"a":null,"cd":"1","no":2,"rtUrl":null,"ftype":0,"rtUrls":[],"djId":0,"copyright":2,"s_id":0,"mark":131072,"originCoverType":0,"single":0,"noCopyrightRcmd":null,"mv":0,"rtype":0,"rurl":null,"mst":9,"cp":0,"publishTime":1468730325241}],"privileges":[{"id":421110801,"fee":0,"payed":0,"st":0,"pl":320000,"dl":320000,"sp":7,"cp":1,"subp":1,"cs":false,"maxbr":320000,"fl":320000,"toast":false,"flag":0,"preSell":false,"playMaxbr":320000,"downloadMaxbr":320000,"chargeInfoList":[{"rate":128000,"chargeUrl":null,"chargeMessage":null,"chargeType":0},{"rate":192000,"chargeUrl":null,"chargeMessage":null,"chargeType":0},{"rate":320000,"chargeUrl":null,"chargeMessage":null,"chargeType":0},{"rate":999000,"chargeUrl":null,"chargeMessage":null,"chargeType":1}]}],"code":200}
   },
   id_all: [
-    437753697,
-    28411989,
-    1330624788,
     31134633,
     31260221,
     1339009324,
-    31134621,
-    421110801,
-    1459703175
-  ],
-  id_prefered:[
     31134621
   ],
-  current_playing_item:0,
-  random_list:false,
-  loop:false,
-  enable_control:false
+  id_prefered:[
+    1459703175,
+    421110801
+  ]
 }
 
 $(document).ready(function(){
+  addTouchControl();
 
-  x_max=document.body.offsetWidth;
-  y_max=document.body.offsetHeight;
-
-//---------
-  // if (yDiff < 0 && start.y >= 0.75*document.body.offsetHeight) {
-  //   if (document.referrer.match('power-button')==null) {
-  //     $(location).attr('href','/');
-  //   }
-  //   else if (document.referrer.match('power-button')[0]!='') {
-  //     $(location).attr('href','../power-button/');
-  //   }
-  // }
-  // else if (yDiff < 0){
-  //   $('.prompt').show();
-//-------------
-  TouchEvt=TouchMotionObject;
-  TouchEvt.addTouchEvt(document.body, 'singletap', function(){togglePlay()} );
-  TouchEvt.addTouchEvt(document.body, 'swipeleft', function(){toggleMusic(1)} );
-  TouchEvt.addTouchEvt(document.body, 'swiperight', function(){toggleMusic()} );
-  TouchEvt.addTouchEvt(document.body, 'singlepress', function(){
-    $('#music-ctrl img').fadeTo('fast',0.5)
-    music.enable_control=true
-  });
-  TouchEvt.addTouchEvt(document.body, 'pressrelease', function(){
-    $('#music-ctrl img:not(.zoom)').css('opacity','0')
-    // $('#music-ctrl img:not(.zoom)').fadeTo('fast',0)
-    $('#music-ctrl img.zoom').fadeTo('normal',0, function () {
-      $('#music-ctrl img').removeClass('zoom')
-    })
-    if ($('.loop').hasClass('zoom')){
-      music.loop=true
-      $('audio').attr('loop','')
-    }
-    else if ($('.order').hasClass('zoom')){
-      music.loop=false
-      $('audio').removeAttr('loop')
-    }
-    else if ($('.previous').hasClass('zoom')){
-      toggleMusic(1)
-    }
-    else if ($('.next').hasClass('zoom')){
-      toggleMusic()
-    }
-  });
-
-  TouchEvt.addTouchEvt(document.body, 'panup', function(){
-    if (music.enable_control){
-      $('#music-ctrl img.zoom').css('opacity','0.5').removeClass('zoom')
-      $('.loop').addClass('zoom').css('opacity','1')
-    }
-  });
-  TouchEvt.addTouchEvt(document.body, 'pandown', function(){
-    if (music.enable_control){
-      $('#music-ctrl img.zoom').css('opacity','0.5').removeClass('zoom')
-      $('.order').addClass('zoom').css('opacity','1')
-    }
-  });
-  TouchEvt.addTouchEvt(document.body, 'panleft', function(){
-    if (music.enable_control){
-      $('#music-ctrl img.zoom').css('opacity','0.5').removeClass('zoom')
-      $('.previous').addClass('zoom').css('opacity','1')
-    }
-  });
-  TouchEvt.addTouchEvt(document.body, 'panright', function(){
-    if (music.enable_control){
-      $('#music-ctrl img.zoom').css('opacity','0.5').removeClass('zoom')
-      $('.next').addClass('zoom').css('opacity','1')
-    }
-  });
-
-  audio1 = document.getElementById("audio1");
-
-  var music_url=music.api.music+music.id_prefered[0];
+  var music_url=song.api.music+song.id_prefered[1];
   loadMusic(music_url);
-  addMusicEvt();
 
-  // loadText();
-  // txt_countdown=setInterval("loadText()",txt_fade_speed)
-
+  countDown();
+  txt_running=setInterval("countDown()",txt_fade_speed)
 });
-
-//--------------------
-
-
-//---------------------------------------------------------------
 
 var txt_iterate_cnt=1;
 var txt_iterate_max=30;
 var txt_fade_toggle=true;
-var txt_countdown;
+var txt_running;
 var txt_fade_speed=3000 //milli second
 var x_max;
 var y_max;
+var start = {}, end = {};
 var audio1;
-var minutes_to_pause=20*60*1000;
-var music_countdown;
-
-function Rando(min, max) {
-  return Math.floor(Math.random() * (max - min) + min ) ;
-}
-
-function loadText(){
-  var div='#txt_fade'
-  if(txt_fade_toggle==true){
-    var new_x=Rando(x_max*0.2,x_max*0.7)
-    var new_y=Rando(y_max*0.2,y_max*0.7)
-    var index = Math.floor(Math.random() * txt.love.length)
-    $(div).css({'left':new_x.toString()+'px', 'top':new_y.toString()+'px'});
-    $("#txt_fade p").text(txt.love[index]);
-    txt_fade_toggle=false
-    txt_iterate_cnt=txt_iterate_cnt+1
-  }
-  else{
-    txt_fade_toggle=true
-  }
-
-  $(div).fadeToggle(txt_fade_speed);
-  if(txt_iterate_cnt>txt_iterate_max){
-    clearInterval(txt_countdown)
-  }
-}
 
 function loadMusic(api_url){
   var httpRequest = new XMLHttpRequest();//第一步：建立所需的对象
@@ -212,39 +100,86 @@ function loadMusic(api_url){
     }
   }
 
+  audio1 = document.getElementById("audio1");
+  audio1.addEventListener('ended', function () { //结束
+      console.log("播放结束");
+  }, false);
+
   // $('audio').removeAttr('controls')
   // $('title').text('Title')
 }
 
-function addMusicEvt(){
-  //initialize menu. This is used to fix display problems
+function addTouchControl(){
+  x_max=document.body.offsetWidth;
+  y_max=document.body.offsetHeight;
 
-  audio1.addEventListener('ended', function () { //结束
-    if(music.random_list==false && music.current_playing_item<music.id_all.length-1){
-      var music_url=music.api.music+music.id_all[++music.current_playing_item]
+  document.body.addEventListener('touchstart', function (e) {
+    if(audio1.paused) {
+      audio1.play();
     }
     else {
-      var music_url=music.api.music+music.id_all[Rando(0,music.id_all.length)]
+      audio1.pause();// 这个就是暂停
     }
-    loadMusic(music_url)
-  }, false);
-  music_countdown=setTimeout(function(){audio1.pause()},minutes_to_pause)
+    start.x = e.changedTouches[0].clientX
+    start.y = e.changedTouches[0].clientY
+  })
+
+  document.body.addEventListener('touchend', function (e) {
+    $('.prompt').hide();
+    end.y = e.changedTouches[0].clientY
+    end.x = e.changedTouches[0].clientX
+
+    var xDiff = end.x - start.x
+    var yDiff = end.y - start.y
+
+    //vertical scroll
+    if (Math.abs(yDiff) > Math.abs(xDiff) && Math.abs(yDiff) > 0.2*document.body.offsetHeight) {
+      console.log('vertical scroll')
+      if (yDiff < 0 && start.y >= 0.75*document.body.offsetHeight) {
+        if (document.referrer.match('power-button')==null) {
+          $(location).attr('href','/');
+        }
+        else if (document.referrer.match('power-button')[0]!='') {
+          $(location).attr('href','../power-button/');
+        }
+      }
+      else if (yDiff < 0){
+        $('.prompt').show();
+      }
+    }
+    //Horrizontal scroll
+    else if (Math.abs(yDiff) > Math.abs(xDiff) && Math.abs(yDiff) > 0.2*document.body.offsetHeight) {
+      console.log('vertical scroll')
+    }
+
+  })
+
+    //Random move
+    document.body.addEventListener('touchmove', function(){})
 }
 
-function togglePlay() {
-  if(audio1.paused) audio1.play()
-  else audio1.pause()
-}
 
-function toggleMusic(last=false) {
-  audio1.pause()
-  if (music.current_playing_item<music.id_all.length-1 && last==false)
-    var music_url=music.api.music+music.id_all[++music.current_playing_item]
-  else if (music.current_playing_item>0 && last==true)
-    var music_url=music.api.music+music.id_all[--music.current_playing_item]
-  else {
-    alert('暂时已经没有更多曲目了')
-    return
+function countDown(){
+  var div='#div1'
+  if(txt_fade_toggle==true){
+    var new_x=Rando(x_max*0.2,x_max*0.7)
+    var new_y=Rando(y_max*0.2,y_max*0.7)
+    var index = Math.floor(Math.random() * txt.love.length)
+    $(div).css({'left':new_x.toString()+'px', 'top':new_y.toString()+'px'});
+    $("#p1").text(txt.love[index]);
+    txt_fade_toggle=false
+    txt_iterate_cnt=txt_iterate_cnt+1
   }
-  loadMusic(music_url)
+  else{
+    txt_fade_toggle=true
+  }
+
+  $(div).fadeToggle(txt_fade_speed);
+  if(txt_iterate_cnt>txt_iterate_max){
+    clearInterval(txt_running)
+  }
+}
+
+function Rando(min, max) {
+  return Math.floor(Math.random() * (max - min) + min ) ;
 }

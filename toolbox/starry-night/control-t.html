@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0">
+  <title>星空体验馆-远程控制终端</title>
+
+	<script src="../../rsc/jquery-1.7.2.min.js"></script>
+	<!-- <script src="http://hammerjs.github.io/dist/hammer.min.js"></script> -->
+	<!-- <script src='./rsc/hammer.min.js'></script> -->
+  <!-- page font -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@200;300&family=Source+Sans+Pro:wght@300&display=swap">
+  <script src='./rsc/touch-motion-obj.js'></script>
+	<script>
+	var targetWin = window.open('./', '_blank');
+	targetWin.onload = function ()
+	{
+		// 向http://localhost:8888/target发送消息
+		targetWin.postMessage('music=stop', "http://localhost:8888/target");
+	}
+	</script>
+</head>
+<body>
+	<audio id='audio1' autoplay >背景音乐</audio>
+	<!-- <div class="wave"></div> -->
+	<div id="music-ctrl">
+		<img class='loop' src='/rsc/repeat-one-line.png'/>
+		<br>
+		<img class='previous' src='/rsc/arrow-left-s-line.png'/>
+		<img class='next' src='/rsc/arrow-right-s-line.png'/>
+		<br>
+		<img class='order' src='/rsc/order-play-line.png'/>
+	</div>
+  <div class="prompt">
+    底部上滑返回
+  </div>
+	<button type="button" name="button" onclick="send()"></button>
+
+</body>
+</html>

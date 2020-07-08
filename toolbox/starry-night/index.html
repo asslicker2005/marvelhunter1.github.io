@@ -2,26 +2,35 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="viewport" content="width = device-width, initial-scale = 1.0">
-  <title>CSS3星空下露营地场景特效+js浮动文字</title>
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0">
+  <title>音乐伴你入睡 | 星空体验馆</title>
 
-  <script src="/rsc/jquery-1.7.2.min.js"></script>
+	<script src="../../rsc/jquery-1.7.2.min.js"></script>
+	<!-- <script src="http://hammerjs.github.io/dist/hammer.min.js"></script> -->
+	<!-- <script src='./rsc/hammer.min.js'></script> -->
   <!-- page font -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@200;300&family=Source+Sans+Pro:wght@300&display=swap">
-  <script src='./rsc/userscript-starrynight.js'></script>
+  <script src='./rsc/touch-motion-obj.js'></script>
+	<script src='./rsc/userscript-starrynight.js'></script>
   <link rel="stylesheet" href="./rsc/style-starrynight.css">
-  <!-- <script type="text/javascript">
-
-  </script> -->
 </head>
 <body>
-  <div id='div1' class="fixed">
+	<audio id='audio1' autoplay controls loop>背景音乐</audio>
+	<div id='txt_fade' class="txt_fade">
     <p id='p1'>
     </p>
   </div>
 	<!-- <div class="wave"></div> -->
+	<div id="music-ctrl">
+		<img class='loop' src='/rsc/repeat-one-line.png'/>
+		<br>
+		<img class='previous' src='/rsc/arrow-left-s-line.png'/>
+		<img class='next' src='/rsc/arrow-right-s-line.png'/>
+		<br>
+		<img class='order' src='/rsc/order-play-line.png'/>
+	</div>
   <div class="prompt">
-    上滑屏幕返回首页
+    底部上滑返回
   </div>
 
   <div class="canvas">
