@@ -11,14 +11,19 @@
 			$('#button').on('click', function(){
 				$(this).toggleClass('on');
 				if (window.self==window.top){
-					var txt='This page is intended for personal use only. It works by being embeded in other website. Please exit and refer to my github page for more information.'
+					var txt='This page is intended for personal use only. It is designed to work while being embeded in other website. Please exit and refer to my github page for more information.'
 					var txt_zh='这个页面不可以单独工作，你可以在相关github仓库上了解它的工作原理'
 			    $("#info").text(txt);   // 显示提示
 					$("#info_zh").text(txt_zh);   // 显示提示
 				}
 				else{
 					if($('#button').hasClass('on')){
-						window.parent.postMessage('state=on','*');
+						if($('#mode_button').is(':checked')){
+							window.parent.postMessage('state=blink','*');
+						}
+						else{
+							window.parent.postMessage('state=on','*');
+						}
 					}
 					else{
 						window.parent.postMessage('state=off','*');
@@ -27,11 +32,21 @@
 			});
 
 			$('#button').on('mousedown', function(){
-				opening=setInterval(function(){$(location).attr('href','/toolbox/starry-night/');}, 850)
+				if($('#button').hasClass('on')){
+					console.log('is on');
+					return;
+				}
+				opening=setInterval(function(){
+					$(location).attr('href','/toolbox/starry-night/');
+				}, 850)
 			});
 
 			$('#button').on('mouseup', function(){
 				clearInterval(opening)
+			});
+
+			$('#mode_button').on('click', function(){
+				console.log($('#mode_button').is(':checked'));
 			});
 		});
 	</script>
@@ -42,6 +57,11 @@
 		<a href="javascript:void(0)" id="button" class=""></a>
 		<span></span>
 	</section>
+	<section>
+		<br>
+		<input id="mode_button" type="checkbox" data-icon1="♂" data-icon2="♀">
+	</section>
+
 	<p id="info" style="color:#fff; text-align:center"></p>
 	<p id="info_zh" style="color:#fff; text-align:center"></p>
 </body>

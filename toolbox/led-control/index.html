@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+	<title>CSS3 Power Button</title>
+	<link rel="stylesheet" href="./rsc/style-ledctrl.css">
+	<script type="text/javascript" src="/rsc/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('input').on('click', function(){
+				if (window.self==window.top){
+					var txt='This page is intended for personal use only. It is designed to work while being embeded in other website. Please exit and refer to my github page for more information.'
+					var txt_zh='这个页面不可以单独工作，你可以在相关github仓库上了解它的工作原理'
+			    $("#info").text(txt);   // 显示提示
+					$("#info_zh").text(txt_zh);   // 显示提示
+				}
+				else{
+					// switch ($('input:radio:checked').value()) {
+					//
+					// 		break;
+					// 	default:
+					//
+					// }
+
+					if($('input:radio:checked').val()!=''){
+						window.parent.postMessage('state='+$('input:radio:checked').val(),'*');
+					}
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id='body'>
+		<ul>
+			<li>
+				<input type="radio" name="radio" value="off" data-icon="OFF">
+				<input type="radio" name="radio" value="on" data-icon="ON">
+				<input type="radio" name="radio" value="1" data-icon="1">
+				<input type="radio" name="radio" value="2" data-icon="2">
+	    	<input type="radio" name="radio" value="3" data-icon="3">
+				<input type="radio" name="radio" value="blink" data-icon="-_^">
+			</li>
+			<li>
+				<p id="info" style="color:#fff; text-align:center"></p>
+				<p id="info_zh" style="color:#fff; text-align:center"></p>
+			</li>
+		</ul>
+
+	</div>
+
+</body>
+</html>
